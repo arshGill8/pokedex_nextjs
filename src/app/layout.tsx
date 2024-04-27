@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { SiPokemon } from "react-icons/si";
+import { MdCatchingPokemon } from "react-icons/md";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,7 +18,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <nav className="flex gap-5 justify-center items-center">
+          <SiPokemon className="text-[275px]  text-blue bg-yellow block w-30" />
+          <MdCatchingPokemon className="text-[92px] text-red-500 w-25 " />
+        </nav>
+        {children}
+      </body>
     </html>
   );
 }
